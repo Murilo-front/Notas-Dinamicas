@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="css/materialize.min.css"
+      media="screen,projection"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projeto Notas</title>
+    <style type="text/css">
+      .underlined {
+        border-bottom: 3px solid currentColor;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div
+        class="hero center card-panel materialize-red darken-4 white-text z-depth-3"
+      >
+        <h1 class="materialize-red-text text-lighten-3">Projeto Notas</h1>
+      </div>
+      <h2 class="materialize-red-text text-lighten-2 underlined">
+        Dados de Alunos
+      </h2>
+
+      <table class="striped">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Nota 1</th>
+            <th>Nota 2</th>
+            <th>Nota 3</th>
+            <th>Nota 4</th>
+            <th>Média</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+    <script src="js/dadosAlunos.js"></script>
+    <script src="js/tabelaAlunos.js"></script>
+  </body>
+</html>
