@@ -1,10 +1,11 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-yellow)
+![Typescript](https://img.shields.io/badge/Typescript-blue)
 
 # Projeto Notas Dinâmicas
 
 ### 📝 Descrição
 
-Tabela com listas de notas de alunos com suas respectivas médias. Projeto que raliza a inserção de dados de alunos na tabela dinamicamente pelo JavaScript com o intuito de praticar conceitos de manipulação de DOM.
+Tabela com listas de notas de alunos com suas respectivas médias. Projeto aprimorado com o uso de typescript para atualiar e adicionar precisão aos códigos Javascript. raliza a inserção de dados de alunos dinamicamente, fazendo o tratamento sobre notas invalidas e quantidade.
 
 ### 👀 Demonstração
 
@@ -19,12 +20,13 @@ Uma visão da interface geral do projeto
 - HTML5
 - CSS3
 - JavaScript
+- Typescript
 
 ### 🎯 Objetivos de aprendizado
 
-- Pratica ao uso de métodos de array como `reduce`, `map` e `push`.
-- Uso de loops
-- Manipulação de DOM
+- Praticar conceitos de tipagem estática e tipos personalizados.
+- Uso de `JSON` para configurações personalizadas.
+- Conceitos de loops em de tipos personalizados de objetos, uso de `Keyof`.
 
 ### 📲 Instalação
 
