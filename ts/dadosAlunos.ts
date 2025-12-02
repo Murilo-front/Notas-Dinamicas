@@ -4,17 +4,32 @@ interface Aluno {
   media?: number;
 }
 
+// Classe que cria alunos com suas notas
+class InfoAlunos {
+  constructor(private nome: string, private notas: Array<number>) {}
+
+  get alunoNotas() {
+    return { nome: this.nome, notas: this.notas };
+  }
+}
+
+// Cria o aluno com as informações de notas e reotrna objeto com as informações
+function criaAluno(nome: string, notas: Array<number>): Aluno {
+  let aluno = new InfoAlunos(nome, notas);
+  return aluno.alunoNotas;
+}
+
 export let alunos: Aluno[] = [
-  { nome: "Daniel", notas: [10, 3, 7.5, 20] },
-  { nome: "Maria", notas: [10, 9, 3] },
-  { nome: "João", notas: [10, 4.5, 1, 3.5] },
-  { nome: "Joana", notas: [1, 3, 9] },
-  { nome: "José", notas: [10, 4.5] },
-  { nome: "Arnaldo", notas: [10, 7, 3] },
-  { nome: "Lucas", notas: [4.5, 9, 8, 3] },
-  { nome: "Luana", notas: [3, 7, 9, 3] },
-  { nome: "Beatriz", notas: [-10, 4, 7, 9] },
-  { nome: "Sergio", notas: [4.5, 9.5, 10, 2] },
+  criaAluno("Daniel", [10, 3, 7.5, 20]),
+  criaAluno("Maria", [10, 9, 3]),
+  criaAluno("João", [10, 4.5, 1, 3.5]),
+  criaAluno("Joana", [1, 3, 9]),
+  criaAluno("José", [10, 4.5]),
+  criaAluno("Arnaldo", [10, 7, 3]),
+  criaAluno("Lucas", [4.5, 9, 8, 3]),
+  criaAluno("Luana", [3, 7, 9, 3]),
+  criaAluno("Beatriz", [-10, 4, 7, 9]),
+  criaAluno("Sergio", [4.5, 9.5, 10, 2]),
 ];
 
 let diferenca: number;
