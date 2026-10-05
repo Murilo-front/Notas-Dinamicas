@@ -1,0 +1,47 @@
+{
+  "name": "projeto_notas",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "![JavaScript](https://img.shields.io/badge/JavaScript-yellow)\r ![Typescript](https://img.shields.io/badge/Typescript-blue)",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "concurrently \"vite\" \"tsc --watch\"",
+    "backend": "cd backend && .venv\\Scripts\\python.exe -m uvicorn main:app --reload",
+    "build": "tsc && vite build",
+    "dist": "electron-builder",
+    "build:back": "cd backend && cd banco && python banco.py",
+    "preview": "vite preview",
+    "electron": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/node": "^26.2.0",
+    "concurrently": "^10.0.5",
+    "electron": "^44.5.1",
+    "electron-builder": "^26.15.3",
+    "vite": "^8.2.1"
+  },
+  "build": {
+    "appId": "com.projeto.notas",
+    "productName": "Projeto Notas",
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "backend/dist/server.exe",
+        "to": "backend/server.exe"
+      }
+    ],
+    "win": {
+      "target": "nsis"
+    }
+  }
+}

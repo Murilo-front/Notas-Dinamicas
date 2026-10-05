@@ -1,0 +1,119 @@
+:root {
+  --planilha-text-color: #f3dadb;
+  --background-dark: #c3494d;
+  --background-light: #ee6e73;
+  --display-alterar-icons: flex;
+  --display-alterar: none;
+}
+
+tbody tr:hover {
+  background-color: rgba(137, 136, 136, 0.619) !important;
+}
+
+.alterarIcons {
+  display: var(--display-alterar);
+  position: absolute;
+  flex-direction: row;
+  top: 0.5rem;
+  right: 0;
+  padding-inline: 1rem;
+  transition:
+    display 0.5s ease,
+    transform 0.5s ease;
+}
+
+.alterarIcons .alterarOptionsIcons {
+  display: var(--display-alterar-icons);
+}
+
+.modificarOptionsBtns {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.modificarConfirmBtns {
+  display: var(--display-alterar);
+  gap: 1.5rem;
+}
+
+tbody tr .alterarIcons {
+  opacity: 0;
+  transform: translateX(0);
+}
+
+thead tr .alterarIcons {
+  transform: translateX(100%);
+}
+
+tbody tr:hover .alterarIcons {
+  transform: translateX(100%);
+  opacity: 1;
+}
+
+tr {
+  position: relative;
+}
+
+.alterarIcons .iconsContainer {
+  gap: 1.2rem;
+}
+
+img {
+  padding: 2px;
+  border-radius: 1rem;
+}
+
+.alterarIcons .iconsContainer img:first-child {
+  background-color: greenyellow;
+}
+
+.alterarIcons .iconsContainer img:last-child {
+  background-color: rgb(239, 66, 66);
+}
+
+.adicionarRow img {
+  background-color: rgb(211, 194, 63);
+}
+
+.alterarIcons img:hover {
+  scale: 1.3;
+  cursor: pointer;
+}
+
+.modificarDiv {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 1rem;
+}
+
+.modificarBtns {
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: 0;
+  border-radius: 0.3rem;
+  padding: 0.5rem;
+  padding-inline: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.leftModificarBtn {
+  background-color: var(--background-light);
+  color: var(--planilha-text-color);
+}
+
+.leftModificarBtn:hover {
+  background-color: var(--background-dark);
+  cursor: pointer;
+}
+
+.rightModificarBtn {
+  background-color: var(--planilha-text-color);
+  color: var(--background-dark);
+}
+
+.rightModificarBtn:hover {
+  background-color: var(--background-light);
+  cursor: pointer;
+}

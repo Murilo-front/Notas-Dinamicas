@@ -1,0 +1,1 @@
+{"version":3,"file":"dadosPlanilha.d.ts","sourceRoot":"","sources":["../../../ts/frontend/planilha/dadosPlanilha.ts"],"names":[],"mappings":"AAEA,wBAAgB,YAAY,CAAC,gBAAgB,EAAE,GAAG,GAAG,MAAM,EAAE,CAO5D;AAED,wBAAgB,QAAQ,CACtB,gBAAgB,EAAE,GAAG,EACrB,eAAe,EAAE,OAAO,GACvB,MAAM,CAAC,MAAM,EAAE,OAAO,CAAC,EAAE,GAAG,OAAO,EAAE,EAAE,CAWzC;AAED,wBAAgB,cAAc,CAAC,OAAO,EAAE,GAAG,WAM1C"}

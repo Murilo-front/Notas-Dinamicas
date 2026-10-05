@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <link
@@ -11,6 +11,18 @@
       href="css/materialize.min.css"
       media="screen,projection"
     />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="css/importarPlanilha.css"
+      media="screen,projection"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="css/alterarDados.css"
+      media="screen,projection"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projeto Notas</title>
     <style type="text/css">
@@ -21,6 +33,9 @@
   </head>
 
   <body>
+    <div class="errorAlert container" style="opacity: 0; position: absolute">
+      <p class="errorMsg"></p>
+    </div>
     <div class="container">
       <div
         class="hero center card-panel materialize-red darken-4 white-text z-depth-3"
@@ -31,6 +46,8 @@
         Dados de Alunos
       </h2>
 
+      <button type="button" class="abrirImportar">Importar planilha</button>
+
       <table class="striped">
         <thead>
           <tr>
@@ -39,13 +56,82 @@
             <th>Nota 2</th>
             <th>Nota 3</th>
             <th>Nota 4</th>
-            <th>Média</th>
+            <th>Media
+              <div class="alterarIcons adicionarRow"><img src="./public/icomoon/PNG/plus.png" alt="addIcon" data-operacao="adicionar"></div>
+            </th>
           </tr>
-        </thead>
-        <tbody id="tbody"></tbody>
+        <tbody id="tbody"></thead>
+        </tbody>
       </table>
+      <div class="modificarDiv">
+        <div class="modificarOptionsBtns">
+        <button type="button" id="descartarBtn" class="leftModificarBtn modificarBtns">Descartar tudo</button>
+        <button type="button" id="alterarDadosBtn" class="rightModificarBtn modificarBtns">Alterar dados</button>
+        </div>
+        <div class="modificarConfirmBtns">
+        <button type="button" id="voltarModificarBtn" class="rightModificarBtn modificarBtns">Voltar</button>
+        </div>
+      </div>
     </div>
-    <script src="js/dadosAlunos.js"></script>
-    <script src="js/tabelaAlunos.js"></script>
+    <div class="importarPlanilha container" style="display: none">
+      <h1>Importar Planilha</h1>
+      <input type="file" id="planilha" accept=".xlsx,.xls" />
+      <div class="checkboxDiv">
+        <input type="checkbox" id="semCabecalho" />
+        <label for="semCabecalho"
+          >Selecione a opcao caso nao tenha cabecalho</label
+        >
+      </div>
+      <div class="btnsPlanilha">
+        <button type="button" class="cancelPlanilhaBtn planilhaBtn">Cancelar</button>
+        <button type="button" class="confirmPlanilhaBtn planilhaBtn">Confirmar</button>
+      </div>
+    </div>
+    <div class="associarPlanilha container" style="display: none">
+      <h1>Associar Planilha</h1>
+      <div class="associarContent">
+        <div class="divSelect">
+          <label for="nomeAluno">Nome Aluno</label>
+          <select name="nomeAluno" id="nomeAluno" class="select"></select>
+        </div>
+        <div class="divSelect">
+          <label for="nota1">Nota 1</label>
+          <select name="nota1" id="nota1" class="select"></select>
+        </div>
+        <div class="divSelect">
+          <label for="nota2">Nota 2</label>
+          <select name="nota2" id="nota2" class="select"></select>
+        </div>
+        <div class="divSelect">
+          <label for="nota3">Nota 3</label>
+          <select name="nota3" id="nota3" class="select"></select>
+        </div>
+        <div class="divSelect">
+          <label for="nota4">Nota 4</label>
+          <select name="nota4" id="nota4" class="select"></select>
+        </div>
+        <div class="divSelect">
+          <label for="media">Media</label>
+          <select name="media" id="media" class="select"></select>
+        </div>
+      </div>
+      <div class="btnsPlanilha">
+        <button type="button" class="cancelAssociarBtn planilhaBtn">
+          Cancelar
+        </button>
+        <button type="button" class="confirmAssociarBtn planilhaBtn">
+          Confirmar
+        </button>
+      </div>
+    </div>
+
+    <div class="disclaimerDiv" style="display: none">
+      <p>Confirmar operacao?</p>
+       <div class="btnsDisclaimer">
+        <button type="button" class="cancelDisclaimerBtn disclaimerBtn">Cancelar</button>
+        <button type="button" class="confirmDisclaimerBtn disclaimerBtn">Confirmar</button>
+      </div>
+    </div>
+    <script type="module" src="js/frontend/main.js"></script>
   </body>
 </html>

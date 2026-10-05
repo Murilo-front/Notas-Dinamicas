@@ -1,0 +1,180 @@
+:root {
+  --planilha-text-color: #f3dadb;
+  --background-dark: #c3494d;
+  --background-light: #ee6e73;
+}
+
+.importarPlanilha,
+.associarPlanilha,
+.disclaimerDiv {
+  position: absolute;
+  top: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--background-dark);
+  color: var(--planilha-text-color);
+  z-index: 2;
+}
+
+.disclaimerDiv {
+  padding: 1rem;
+  padding-inline: 1.5rem;
+  top: 50%;
+  border-radius: 0.5rem;
+}
+
+.disclaimerDiv p {
+  font-size: 1.3rem;
+}
+
+.importarPlanilha h1,
+.associarPlanilha h1 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2rem;
+  border-bottom: 3px solid var(--planilha-text-color);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+#planilha {
+  display: flex;
+  width: 95%;
+  font-size: 1.2rem;
+  margin: 1rem;
+  padding: 0.3rem;
+  outline: 2px solid var(--planilha-text-color);
+}
+
+#planilha:hover,
+.divSelect select:hover,
+.planilhaBtn:hover,
+.disclaimerBtn:hover {
+  cursor: pointer;
+  background-color: #c7b9b9;
+}
+
+.btnsPlanilha,
+.btnsDisclaimer {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+  width: 95%;
+  justify-content: end;
+  align-self: center;
+}
+
+.planilhaBtn,
+.disclaimerBtn {
+  padding: 0.5rem;
+  padding-inline: 0.7rem;
+  background-color: var(--planilha-text-color);
+  font-weight: bold;
+  border: 0px;
+  color: #6b2e2e;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+input[type="checkbox"] {
+  display: flex;
+  position: relative !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.checkboxDiv {
+  display: flex;
+  margin-left: 1rem;
+  gap: 0.5rem;
+}
+
+.checkboxDiv label {
+  color: var(--planilha-text-color);
+  cursor: pointer;
+}
+
+.associarContent {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  gap: 1.3rem;
+}
+
+.divSelect {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding-inline: 2rem;
+  align-items: center;
+}
+
+.divSelect select {
+  display: flex !important;
+  width: 20% !important;
+  text-align: center;
+  font-size: 1.2rem;
+  background-color: var(--planilha-text-color);
+  font-weight: 600;
+  border: 0 !important;
+  border-radius: 0.5rem;
+}
+
+.divSelect label {
+  font-size: 1.5rem;
+  color: var(--planilha-text-color);
+  font-weight: bold;
+}
+
+.abrirImportar {
+  font-size: 1.2rem;
+  background-color: var(--background-light);
+  border: 0;
+  color: var(--planilha-text-color);
+  padding: 0.5rem;
+  padding-inline: 1rem;
+  font-weight: 600;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.abrirImportar:hover {
+  background-color: var(--background-dark);
+}
+
+.errorAlert {
+  display: flex;
+  z-index: 3;
+  background-color: var(--background-light);
+  height: fit-content;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+  transform: translateY(-1rem);
+}
+
+.errorAlert.errorOn {
+  transform: translateY(1rem);
+}
+
+.errorAlert .errorMsg {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--planilha-text-color);
+  padding-left: 1rem;
+  display: flex;
+}

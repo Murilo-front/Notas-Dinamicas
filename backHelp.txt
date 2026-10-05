@@ -1,0 +1,31 @@
+Conferir se tem algum terminal com o servidor aberto
+
+netstat -ano | findstr :8000
+
+Veja se aparece algum com listner:
+TCP    127.0.0.1:8000    0.0.0.0:0    LISTENING    15432
+
+Se sim: 
+tasklist | findstr 15432
+
+Encerre e confirme:
+taskkill /PID 15432 /F
+netstat -ano | findstr :8000
+
+Entrar no venv:
+.\.venv\Scripts\Activate.ps1
+
+Remover Dist: 
+Remove-Item -Recurse -Force dist
+
+Reinstalar os .exe:
+pyinstaller --onefile server.py
+pyinstaller --onefile main.py
+
+Sair do venv:
+Deactivate
+
+Rodar apenas servidor:
+.\dist\server.exe
+
+Caso ao instalar o executável algumas imagens não carregar, conferir se a pasta do icomoon está dentro de public no diretório dist/
