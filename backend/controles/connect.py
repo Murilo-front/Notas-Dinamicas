@@ -1,21 +1,38 @@
 import sqlite3
 import sys
+import os
 from pathlib import Path
 
 
 if getattr(sys, "frozen", False):
-    # Rodando como .exe
-    PASTA_BASE = Path(sys.executable).parent.parent
+    PASTA_BASE = Path(os.environ["LOCALAPPDATA"]) / "ProjetoNotas"
 else:
-    # Rodando normalmente com Python
     PASTA_BASE = Path(__file__).resolve().parent
 
 
-CAMINHO_BANCO = PASTA_BASE / "banco" / "notas.db"
+PASTA_BANCO = PASTA_BASE / "banco"
+CAMINHO_BANCO = PASTA_BANCO / "notas.db"
+
+PASTA_BANCO.mkdir(parents=True, exist_ok=True)
 
 
 def conectar():
-    print("Caminho do banco:", CAMINHO_BANCO)
-    print("Banco existe:", CAMINHO_BANCO.exists())
+    conexao = sqlite3.connect(CAMINHO_BANCO)
 
-    return sqlite3.connect(CAMINHO_BANCO)
+    cursor = conexao.cursor()
+
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS alunos (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            nome TEXT NOT NULL,
+            nota1 REAL,
+            nota2 REAL,
+            nota3 REAL,
+            nota4 REAL,
+            media REAL
+        )
+    """)
+
+    conexao.commit()
+
+    return conexao

@@ -40,7 +40,7 @@ class NovoAluno {
   }
 
   addAlterarIcons(td: HTMLTableCellElement) {
-    const iconPath = "/public/icomoon/PNG";
+    const iconPath = "./public/icomoon/PNG";
     const icons = `<div class="alteracaoBtns alterarIcons" data-id="${this.id}">
               <div class="alterarOptionsIcons iconsContainer">
                 <img src="${iconPath}/pencil2.png" data-operacao="alterar" alt="lapisIcon" />

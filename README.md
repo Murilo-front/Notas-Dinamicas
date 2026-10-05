@@ -175,6 +175,8 @@ Gere o build do frontend:
 npm run build
 ```
 
+Dentro da pasta `dist` crie a pasta `public` e mova a pasta `icomoon` para dentro dela
+
 Depois gere o instalador do Electron:
 
 ```bash
