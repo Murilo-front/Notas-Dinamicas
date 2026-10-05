@@ -16,7 +16,7 @@ Tabela de notas de alunos com suas respectivas médias. Permite adicionar notas 
 
 Uma visão da interface geral do projeto
 
-<img src="produto/Foto-produto.png" alt="Foto do produto">
+<img src="Produto/Foto-produto.png" alt="Foto do produto">
 
 ### 💻 Tecnologias utilizadas
 
